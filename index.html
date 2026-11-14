@@ -483,9 +483,11 @@
         color: #7a7d86;
         cursor: default;
       }
+      /* minmax(0, 1fr) keeps a column from growing to the size of its content, which in Safari
+         made the slots wider than the window. */
       #equipment-slots {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 6px;
         margin-bottom: 10px;
         padding-bottom: 10px;
@@ -496,7 +498,7 @@
       }
       #inventory-slots {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 6px;
       }
       /* A slot is a frame 3 art pixels wide on each side. */
